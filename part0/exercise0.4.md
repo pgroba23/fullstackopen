@@ -1,4 +1,4 @@
-# Exercise 0.4: New Note Diagram
+# Ejercicio 0.4: Diagrama de nueva nota
 
 ```mermaid
 sequenceDiagram
@@ -6,7 +6,7 @@ sequenceDiagram
     participant server
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
-    Note right of browser: Form data: note content
+    Note right of browser: Datos del formulario: contenido de la nota
     activate server
     server-->>browser: HTTP 302 Found
     Note left of server: Location: /exampleapp/notes
@@ -14,25 +14,25 @@ sequenceDiagram
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
-    server-->>browser: HTML document
+    server-->>browser: Documento HTML
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
     activate server
-    server-->>browser: CSS file
+    server-->>browser: Archivo CSS
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
     activate server
-    server-->>browser: JavaScript file
+    server-->>browser: Archivo JavaScript
     deactivate server
 
-    Note right of browser: Browser executes JavaScript
+    Note right of browser: El browser ejecuta el código JavaScript
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server-->>browser: JSON data [{ content: "note", date: "2023-1-1" }, ...]
+    server-->>browser: Datos JSON [{ content: "nota", date: "2023-1-1" }, ...]
     deactivate server
 
-    Note right of browser: Browser renders notes list using DOM manipulation
+    Note right of browser: El browser renderiza la lista de notas usando manipulación del DOM
 ```
